@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body id="detail">
+    <%- include('partials/header') %>
+    <main id="detail-main">
+    <% if (item.photo) { %>
+        <img src="<%= item.photoSrc %>" alt="<%= item.name %>">
+    <% } %>
+    <div class="left-col">
+        <h2>
+            <%= item.name %>
+        </h2>
+    <p>
+        (<%= item.number_in_stock %> in stock.)
+    </p>
+    <p>
+        <%= item.description %>
+    </p>
+    <h3>
+        $<%= item.price %>
+    </h3>
+    <div id="button-row">
+        <a href="<%= item.url + '/update' %>">
+            <button>
+                Update this item
+            </button>
+        </a>
+        <a href="<%= item.url + '/delete' %>">
+            <button>
+                Delete this item
+            </button>
+        </a>
+    </div>
+    </div>
+</main>
+
+</body>
+</html>

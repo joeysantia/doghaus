@@ -1,0 +1,205 @@
+:root {
+  --border-radius: 8px;
+  --default-font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  --doghaus-orange: #f3ab04;
+  --doghaus-dark-blue: #002347;
+  --doghaus-light-blue: #9FE7F5;
+  --doghaus-blue: #429EBD;
+  --doghaus-red: #FF5003;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  font-family: var(--default-font);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand";
+  background-color: var(--doghaus-orange);
+}
+
+header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+header img {
+  height: 2em;
+}
+
+header h2 {
+  display: inline;
+}
+
+#detail-main, .grid, form {
+  padding: 4rem;
+}
+
+#home {
+  background-image: url("../images/home-bg.jpg");
+  background-size: cover;
+  background-position:center;
+  font-weight: bold;
+  padding: 4rem 0rem;
+}
+
+.index { 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+}
+
+button {
+  color: var(--doghaus-dark-blue);
+  margin-top: 2em;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  padding: 0.5em 0.75em;
+  background-color: var(--doghaus-orange);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+  color: var(--doghaus-orange);
+  background-color: var(--doghaus-blue);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#catalog,
+#detail {
+  background-image: url("../images/catalog-bg.jpg");
+}
+
+.item-card > div {
+  min-height: 18em;
+  max-height: 18em;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--doghaus-light-blue);
+  border-radius: var(--border-radius);
+}
+
+.item-card img {
+  object-fit: contain;
+  height: 4em;
+}
+
+#detail-main {
+  display: flex; 
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+}
+
+#detail-main > img {
+  object-fit: contain;
+  height: 80%;
+  width: 80%;
+}
+
+#button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1em;
+  border-radius: 12px;
+  border: 2px solid black;
+  background-color: var(--doghaus-light-blue);
+}
+
+legend {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  position: relative;
+  top: 0.4em;
+}
+
+label {
+  text-align: start;
+}
+
+input {
+  width: 20em;
+}
+
+input[type=text] {
+  border-style: solid;
+}
+
+textarea {
+  font-family: var(--default-font);
+}
+
+#delete-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 798px) {
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-width:fit-content;
+  }
+
+  fieldset > div {
+    width: 20em;
+  }
+
+  #detail-main {
+    flex-direction: column;
+  }
+} 
+
+
+
+

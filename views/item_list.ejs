@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body id="catalog">
+    <%- include('partials/header') %>
+    <h1>
+        <%= title %>
+    </h1>
+    <main class="grid">
+        <% items.forEach(item => { %>
+            <a class="item-card" href="<%= item.url %>">
+                <div>
+                    <h3>
+                        <%= item.name %>
+                    </h3>
+                    <% if (item.photo) { %>
+                        <%= console.log('this item has a photo') %>
+                        <img src="<%= item.photoSrc %>" alt="<%= item.name %>">
+                    <% } %>
+                    <p>
+                        <%= item.number_in_stock %> in stock.
+                    </p>
+                    <h4>
+                        $<%= item.price %>
+                    </h4>
+                </div>
+            </a>
+        <% }) %>
+    </main>
+    <a href="<%= category + '/create' %>">
+        <button>
+            Add new item 
+        </button>
+    </a>
+</body>
+</html>

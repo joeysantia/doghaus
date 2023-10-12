@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+  </head>
+  <body id="catalog">
+    <%- include('partials/header') %>
+    <form method="POST" enctype="multipart/form-data" action="">
+      <fieldset>
+        <legend><%= title %></legend>
+        <div>
+          <label for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            value="<%= item ? item.name : '' %>"
+          />
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            cols="35"
+            rows="10"
+            required
+            value="<%= item ? item.description : '' %>"
+          ><%= item ? item.description : '' %></textarea>
+        </div>
+        <div>
+          <label for="number-in-stock">Number in stock</label>
+          <input
+            id="number-in-stock"
+            type="number"
+            name="number_in_stock"
+            required
+            value="<%= item ? item.number_in_stock : '' %>"
+          />
+        </div>
+        <div>
+          <label for="price">Price</label>
+          <input
+            id="price"
+            type="number"
+            name="price"
+            step=".01"
+            required
+            value="<%= item ? item.price : '' %>"
+          />
+        </div>
+        <div>
+          <label for="photo">Photo (optional)</label>
+          <input
+            id="photo"
+            type="file"
+            accept="image/.jpg, image/.jpeg, image/.png, image/.svg"
+            name="photo"
+            value="<%= item ? item.photo : '' %>"
+          />
+        </div>
+        <div>
+          <label for="password">
+            <strong> Please enter the admin password </strong>
+          </label>
+          <input id="password" type="password" name="password" />
+        </div>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+    <ul>
+      <% errors.forEach(error => { %>
+      <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
